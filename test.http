@@ -2,20 +2,13 @@
 POST http://localhost:5000/login
 Content-Type: application/json
 
-{"login": "de", "password": "AH31LP#"}
+{"login": "admin", "password": "admin"}
 
-###
-
-POST http://localhost:5000/registration
-Content-Type: application/json
-
-{"name": "api","phone_number": "0661112269","login": "tom", "password": "AH31LP#"}
 ###
 POST http://localhost:5000/registration
 Content-Type: application/json
 
-
-{"name": "api","phone_number": "0661234567","login": "eew", "password": "12345"}
+{"name": "aaa","email": "000","login": "admin", "password": "admin"}
 ###
 #Get JWT
 POST http://localhost:5000/login
@@ -26,35 +19,26 @@ Content-Type: application/json
 ###
 POST http://localhost:5000/logout
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODE0NzcwNDR9.GVsCCZcGzwYLn7VRb2Ig4C0F4TM28eOelHpvyGWxTCA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2OTQzNjIyMjJ9.NhfMJ21hm_ohLf6zZKe-WlRzuDajO3GnuhCIFsxeQPM
 
 ###
-PUT http://localhost:5000/post/1
+POST http://localhost:5000/meals
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2ODE0OTQ2MDN9.ExPOt4ZHxvHJK1Gm8ngPqHO7zZEdqstWCPD05ZzIAso
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2OTQzNjM0Njh9.TUM2zI1DsjZ3C8N-82NhI4bnXdRPfgqihGKUaiW6Ack
 
-{"title": "MODIFIED SUPER TITLE", "text": "Text textText textText textText textText text"}
-
+{"title": "TITLE FOR FIFTH USER", "description": "some desc", "ingredients": "", "weight": "100g", "price": "543"}
 ###
-DELETE http://localhost:5000/post/4
+
+PUT http://localhost:5000/meals/7
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMCwiZXhwIjoxNjgxNDc5MTcyfQ.q92MoCxW30dg6-QSdkLKsjgdKauet90_B_eBWl1RtpQ
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjo3LCJleHAiOjE2OTQzNjQ3ODF9.BGQNMRL676o2OvuvVq_7JJ98Z0TE1sF7wOh8cC01uEE
 
-###
-POST http://localhost:5000/posts
-Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2ODE0OTQ2MDN9.ExPOt4ZHxvHJK1Gm8ngPqHO7zZEdqstWCPD05ZzIAso
-
-{"title": "TITLE FOR FIFTH USER", "text": "NOT A TEXT"}
+{"title": "another title", "description": "some desc", "ingredients": "", "weight": "100g", "price": "543"}
 ###
 
-GET http://localhost:5000/post/454
-Content-Type: application/json
-###
-
-GET http://localhost:5000/posts
+GET http://localhost:5000/meals
 Content-Type: application/json
 
 ###
-GET http://localhost:5000/posts?user_id=3&limit=10&offset=3&ordering=desc
+GET http://localhost:5000/meals?&limit=10&offset=0&ordering=desc
 Content-Type: application/json
