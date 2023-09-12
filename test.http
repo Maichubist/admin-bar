@@ -1,0 +1,60 @@
+#Get JWT
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{"login": "de", "password": "AH31LP#"}
+
+###
+
+POST http://localhost:5000/registration
+Content-Type: application/json
+
+{"name": "api","phone_number": "0661112269","login": "tom", "password": "AH31LP#"}
+###
+POST http://localhost:5000/registration
+Content-Type: application/json
+
+
+{"name": "api","phone_number": "0661234567","login": "eew", "password": "12345"}
+###
+#Get JWT
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{"login": "tom", "password": "AH31LP#"}
+
+###
+POST http://localhost:5000/logout
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2ODE0NzcwNDR9.GVsCCZcGzwYLn7VRb2Ig4C0F4TM28eOelHpvyGWxTCA
+
+###
+PUT http://localhost:5000/post/1
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2ODE0OTQ2MDN9.ExPOt4ZHxvHJK1Gm8ngPqHO7zZEdqstWCPD05ZzIAso
+
+{"title": "MODIFIED SUPER TITLE", "text": "Text textText textText textText textText text"}
+
+###
+DELETE http://localhost:5000/post/4
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxMCwiZXhwIjoxNjgxNDc5MTcyfQ.q92MoCxW30dg6-QSdkLKsjgdKauet90_B_eBWl1RtpQ
+
+###
+POST http://localhost:5000/posts
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2ODE0OTQ2MDN9.ExPOt4ZHxvHJK1Gm8ngPqHO7zZEdqstWCPD05ZzIAso
+
+{"title": "TITLE FOR FIFTH USER", "text": "NOT A TEXT"}
+###
+
+GET http://localhost:5000/post/454
+Content-Type: application/json
+###
+
+GET http://localhost:5000/posts
+Content-Type: application/json
+
+###
+GET http://localhost:5000/posts?user_id=3&limit=10&offset=3&ordering=desc
+Content-Type: application/json
